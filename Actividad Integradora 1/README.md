@@ -1,4 +1,4 @@
-Esta actividad será respecto a registros de tipos de automoviles, que como atributo, aparte del nombre, será la velocidad máxima.
+Esta actividad será respecto a registros de tipos de automoviles deportivos, que como atributo, aparte del nombre, será la velocidad máxima.
 
 Primeramente, para su funcionamiento se tienen que descargar los 3 archivos en la misma carpeta o lugar de dirección.
 Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación al "sort.h" porque el main ya lo incluye.
@@ -8,4 +8,5 @@ ejemplo si se está compilando desde un OS windows (compilación desde la termin
 
 En aspectos generales, el main.cpp contiene el menú de operación y las llamadas de las funciones del sort.h donde este contiene los metodos que realizan el algoritmo de ordenamiento y de busqueda.
 
-Particularizando, el main primeramente
+Particularizando. El main primeramente hace la lectura del registro y lo guarda en un vector, para este proceso tiene una complejidad temporal asíntótica lineal O(n) ya que recorre individualmente cada registro.
+Como segundo paso ordena el registro con una llamada del sort.h con el método y algoritmo SelectionSort. Especialmente se escogió este tipo de algoritmo de ordenamiento porque el escenario en el que nos movemos que son los tipos de autos deportivos y no requiere de un análsis no tan complejo como el que pudiese ser el MergeSort 
