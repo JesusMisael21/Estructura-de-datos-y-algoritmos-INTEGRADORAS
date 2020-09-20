@@ -8,4 +8,4 @@ ejemplo si se está compilando desde un OS windows (compilación desde la termin
 
 En aspectos generales, el main.cpp contiene el menú de operación y las llamadas de las funciones del sort.h donde este contiene los metodos que realizan el algoritmo de ordenamiento y de busqueda.
 
-Particularizando, el main primeramente 
+Particularizando, el main primeramente
