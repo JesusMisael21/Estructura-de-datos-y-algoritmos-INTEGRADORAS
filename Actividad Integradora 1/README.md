@@ -4,4 +4,8 @@ Primeramente, para su funcionamiento se tienen que descargar los 3 archivos en l
 Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación al "sort.h" porque el main ya lo incluye.
 ejemplo si se está compilando desde un OS windows (compilación desde la terminal): G++ main.cpp -o main.exe
 
-# Funcionamiento y análisis de complejidad:
+# Funcionamiento y análisis de complejidad
+
+En aspectos generales, el main.cpp contiene el menú de operación y las llamadas de las funciones del sort.h donde este contiene los metodos que realizan el algoritmo de ordenamiento y de busqueda.
+
+Particularizando, el main primeramente 
