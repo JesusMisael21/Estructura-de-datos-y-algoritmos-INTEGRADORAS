@@ -1,6 +1,6 @@
 Esta actividad será respecto a registros de tipos de automoviles deportivos, que como atributo, aparte del nombre, será la velocidad máxima.
 
-Primeramente, para su funcionamiento se tienen que descargar los 3 archivos en la misma carpeta o lugar de dirección.
+Primeramente, para su funcionamiento se tienen que descargar los 3 archivos (main.cpp , sort.h y carros.csv) en la misma carpeta o lugar de dirección.
 Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación al "sort.h" porque el main ya lo incluye.
 ejemplo si se está compilando desde un OS windows (compilación desde la terminal): G++ main.cpp -o main.exe
 Al correr el programa se generará un cuarto archivo, aquí se almacena los registros ordenados.
