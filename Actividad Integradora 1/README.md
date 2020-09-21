@@ -12,4 +12,7 @@ Particularizando. El main primeramente hace la lectura del registro y lo guarda 
 
 Como segundo paso se ordena el registro por velocidades máximas con una llamada del sort.h y lo guardamos en otro vector, este proceso se realiza con el método SelectionSort cual complejidad temporal asintótica es O(n^2). Especialmente se escogió este tipo de algoritmo de ordenamiento porque el escenario en el que nos movemos, que son los tipos de autos deportivos, no requiere de un análsis no tan complejo como el que pudiese ser el MergeSort que va dirigido a almacenamientos sumumamente mas grandes. Al igual se escogió este algoritmo por su forma no tan compleja para adaptarlo en el escenario y poder dividir por atributos y ocupar el atributo que necesitavamos que es la velocidad máxima. Para este último se comprende de un análisis de complejidad temporal asintótica lineal O(n) ya que recorre solo una vez por cada registro, así dividiendolo por atributo.
 
-Para el tercer paso recurrimos al almacenamiento de los datos ordenados en un archivo nuevo, en este caso es un archivo en formato de bitacora o .csv
+Para el tercer paso recurrimos a almacenar los datos ordenados en un archivo nuevo, en este caso es un archivo en formato de bitacora o .csv 
+En caso de no contar con este archivo en la carpeta el mismo programa crea uno nuevo llamado "Datos_Carros_Ordenados.csv". Para este proceso se tiene que recorrer registro por registro de forma ascendente lo que el análisis nos indica que la complejidad temporal asintótica es lineal O(n).
+
+Para el cuarto paso
