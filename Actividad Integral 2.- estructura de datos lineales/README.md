@@ -28,3 +28,9 @@ Este es una función o en este caso como se trabaja con orientado a objetos, es 
 ## find
 
 Este método recibe un tipo de elemento de acuerdo al tipo de lista y regresa la posición en donde se encuentra ese elemento. Para este elemento se implementa un algoritmo de busqueda secuencial, es decir, para buscar un elemento se tiene que pasar por cada elemento uno por uno empezando con la cabeza, por lo tanto el peor de los casos es cuando el elemento se encuentra al final de la lista, teniendo una complejidad temporal asintótica O(n).
+
+## ordenar
+
+Algoritmo que ordena el registro por alturas de manera ascendente con una llamada del sort.h, y lo guardamos en otro vector, este proceso se realiza con la abstracción del SelectionSort cual complejidad temporal asintótica es O (n ^ 2). Especialmente se escogió este tipo de algoritmo de ordenamiento porque el escenario en el que nos movemos, que son personas de una región en específico, no requiere de un análisis no tan complejo como el que pudiese ser el MergeSort que va dirigido a almacenamientos sumumamente mas grandes. Al igual se escogió este algoritmo por su forma no tan compleja para adaptarlo en el escenario y poder dividir por atributos y ocupar el atributo que necesitavamos que es la altura. Para este se comprende de un análisis de complejidad temporal asintótica lineal O (n) que se ejecuta antes del ordenamiento, y es lineal ya que recorre solo una vez por cada registro, así dividiendolo por atributo. Este algoritmo se encuentra en el programa de sort.
+
+
