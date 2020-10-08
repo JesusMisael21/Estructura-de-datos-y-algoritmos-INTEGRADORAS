@@ -27,10 +27,16 @@ Este es una función o en este caso como se trabaja con orientado a objetos, es 
 
 ## find
 
-Este método recibe un tipo de elemento de acuerdo al tipo de lista y regresa la posición en donde se encuentra ese elemento. Para este elemento se implementa un algoritmo de busqueda secuencial, es decir, para buscar un elemento se tiene que pasar por cada elemento uno por uno empezando con la cabeza, por lo tanto el peor de los casos es cuando el elemento se encuentra al final de la lista, teniendo una complejidad temporal asintótica O(n).
+Este método recibe el vector con la información ya ordenada y las dos cantidades de las alturas como limites del rango, este regresa otro vector con la información específica de acuerdo al rango introducido. El algoritmo que se usa es busqueda binaria en forma secuencial que nos da una complejidad asintótica logaritmica O (log (n)). Esto se hace en dos ocasiones, una para encontrar la posición del elemento inferior del rango y otra para encontrar la posición del elemento superior del rango. Por lo tanto, O (log (n ^ 2)) según la jerarquía de complejidades.
 
 ## ordenar
 
 Algoritmo que ordena el registro por alturas de manera ascendente con una llamada del sort.h, y lo guardamos en otro vector, este proceso se realiza con la abstracción del SelectionSort cual complejidad temporal asintótica es O (n ^ 2). Especialmente se escogió este tipo de algoritmo de ordenamiento porque el escenario en el que nos movemos, que son personas de una región en específico, no requiere de un análisis no tan complejo como el que pudiese ser el MergeSort que va dirigido a almacenamientos sumumamente mas grandes. Al igual se escogió este algoritmo por su forma no tan compleja para adaptarlo en el escenario y poder dividir por atributos y ocupar el atributo que necesitavamos que es la altura. Para este se comprende de un análisis de complejidad temporal asintótica lineal O (n) que se ejecuta antes del ordenamiento, y es lineal ya que recorre solo una vez por cada registro, así dividiendolo por atributo. Este algoritmo se encuentra en el programa de sort.
 
+## update
 
+Para este método se necesita un argumento de dos elementos, recibe la posición a actualizar y el elemento que se va a insertar en dicha posición. El algoritmo que cuenta es parecido al de find (busqueda secuencial), tiene que pasar por cada una de las posiciones empezando desde la posición 0 hasta llegar a la posición deseada. Entonces, para el peor de los casos es cuando se quiera actualizar el elemento final de la lista, así teniendo una complejidad temporal asintótica O(n).
+
+## remove
+
+En este metodo se recibe la posición del elemento a eliminar haciendo la lista más chica en 1 cada ves que se utilice (siempre y cuando la cantidad de elementos de la lista sea diferente de cero). Para eliminar la posición deseada se tiene que pasar por cada una de las anteriores, entonces para el peor de los casos es que se quisiera eliminar el elemento final de la lista, así teniendo la complejidad temporal asintótica O(n). Tengamos en cuenta que tenemos una k sumandose a la temporalidad, esta representa la cantidad de pasos en la que redirecciona los enlaces de los nodos, sin embargo esta no se cuenta en nuestra complejidad , por lo que se descarta.
