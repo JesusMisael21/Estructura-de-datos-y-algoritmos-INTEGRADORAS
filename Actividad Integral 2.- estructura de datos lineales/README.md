@@ -1,6 +1,6 @@
-En esta entrega se hizo con respecto a un registro donde como atributos se encuentran los nombres y las alturas (estaturas) de dichas personas.
+En esta entrega se hizo con respecto a un registro de un grupo de personas en particular, donde como atributos se encuentran los nombres y las alturas (estaturas) de dichas personas.
 
-Primeramente, para su funcionamiento se tienen que descargar los 5 archivos (main.cpp, sort.h, list.h, exception.h y personas.csv) en la misma carpeta o lugar de dirección. Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación a cualquier otra librería" porque el main ya lo incluye. Ejemplo si se está compilando desde un OS windows (compilación desde la terminal): G ++ main.cpp -o main.exe
+***Nota:*** Primeramente, para su funcionamiento se tienen que descargar los 5 archivos (main.cpp, sort.h, list.h, exception.h y personas.csv) en la misma carpeta o lugar de dirección. Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación a cualquier otra librería" porque el main ya lo incluye. Ejemplo si se está compilando desde un OS windows (compilación desde la terminal): G ++ main.cpp -o main.exe
 
 Al ejecutar el programa se generará un cuarto archivo, ahí se almacenan los registros ordenados.
 
