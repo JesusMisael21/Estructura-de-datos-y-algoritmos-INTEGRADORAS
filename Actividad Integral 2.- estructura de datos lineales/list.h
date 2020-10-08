@@ -8,6 +8,8 @@
 #define LINKEDLIST_H_
 
 #include <string>
+#include <iostream>
+#include <vector>
 #include <sstream>
 #include "exception.h"
 
@@ -47,7 +49,7 @@ public:
 	// Prototipo de los metodos/funciones para manipular la lista
 	void addFirst(T) throw (OutOfMemory);
 	void add(T) throw (OutOfMemory);
-	int find(T) const;
+	std::vector<T> find(const std::vector<T>&,int,int);
 	T posic(int);
 	bool update(int, T) throw (IndexOutOfBounds);
 	T    removeFirst() throw (NoSuchElement);
@@ -55,8 +57,12 @@ public:
 	bool empty() const;
 	void clear();
 	std::string toString() const;
-	// Variables que no me interesan que el usuario vea (auxiliares)
+	// Variables y metodos que no me interesan que el usuario vea (auxiliares)
 private:
+	int bsMIN_seq(const std::vector<int>&, int size, int val);
+	int bsMAX_seq(const std::vector<int>&, int size, int val);
+	void separar_atributos(std::vector<T>&,std::vector<T>&,std::vector<T>&);
+	std::vector<int> str_int(std::vector<std::string>&);
 	Link<T> *head;
 	int 	size;
 };
@@ -106,21 +112,75 @@ void List<T>::add(T val) throw (OutOfMemory) {
 	p->next = newLink;
 	size++;
 }
-// Definición del find (busca un elemento de acuerdo a su valor recibido y retorna la posicion)
+// Declaración del separar_atributos
 template <class T>
-int List<T>::find(T val) const {
-	Link<T> *p;
-
-	p = head;
-int i=0;
-	while (p != 0) {
-		if (p->value == val) {
-			return i;
-		}
-		p = p->next;
-		i++;
+void List<T>::separar_atributos(std::vector<T>&valor_numerico,std::vector<T>&nombre,std::vector<T>&datos){
+	int l=0;
+	for(int k=0;k<datos.size();k++){
+		if(l%2!=0){valor_numerico.push_back(datos[k]);}
+		else{nombre.push_back(datos[k]);}
+		l++;
 	}
-	return -1;
+}
+// Definición del find (algoritmo de busqueda adecuado para este escenario)
+template <class T>
+std::vector<T> List<T>::find(const std::vector<T>&source,int min,int max){
+	std::vector<T> datos(source);
+	std::vector<T> nombre;
+	std::vector<T> valor_numerico;
+	separar_atributos(valor_numerico,nombre,datos);
+	std::vector<int> vel;
+	vel=str_int(valor_numerico);
+	int posI=bsMIN_seq(vel,vel.size(),min);
+	int posF=bsMAX_seq(vel,vel.size(),max);
+	if(min==max){
+		max++;
+		posF=bsMIN_seq(vel,vel.size(),max);
+	}
+	std::vector<T> datosBuscados;
+	for(int i=posI;i<=posF;i++){
+		datosBuscados.push_back(nombre[i]+" "+valor_numerico[i]);
+	}
+	return datosBuscados;
+}
+//Declaración del metodo bs_seqMIN (busca la posicion del valor mas chico del rango)
+template <class T>
+int List<T>::bsMIN_seq(const std::vector<int>&arr, int size, int val){
+	int mid;
+	int low = 0;
+	int high = size - 1;
+
+	while (low < high) {
+		mid = (high + low) / 2;
+		if (val == arr[mid]) {
+			return mid;
+		} else if (val < arr[mid]) {
+			high = mid - 1;
+		} else if (val > arr[mid]) {
+			low = mid + 1;
+		}
+	}
+	return low;
+}
+
+//Declaración del metodo bs_seqMAX (busca la posicion del valor mas grande del rango)
+template <class T>
+int List<T>::bsMAX_seq(const std::vector<int>&arr, int size, int val){
+	int mid;
+	int low = 0;
+	int high = size - 1;
+
+	while (low < high) {
+		mid = (high + low) / 2;
+		if (val == arr[mid]) {
+			return mid;
+		} else if (val < arr[mid]) {
+			high = mid - 1;
+		} else if (val > arr[mid]) {
+			low = mid + 1;
+		}
+	}
+	return low-1;
 }
 // Definición de update (actualiza la posicion deseada con el valor introducido)
 template <class T>
@@ -229,7 +289,16 @@ T List<T>::posic(int index){
 	}
 	return p->value;
 }
-
+// Declaración del metodo srt_int (transformar de vector string a int)
+template <class T>
+std::vector<int> List<T>::str_int(std::vector<std::string>&source){
+	std::vector<T> datos(source);
+	std::vector<int> vel;
+	for(int i=0;i<datos.size();i++){
+		vel.push_back(stoi(datos[i]));
+	}
+	return vel;
+}
 // Definición de toString (se usa para leer la lista en forma de array)
 template <class T>
 std::string List<T>::toString() const {

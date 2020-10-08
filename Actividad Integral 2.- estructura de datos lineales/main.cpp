@@ -17,7 +17,7 @@
 
 using namespace std;
 
-//Declaracion de las funciones auxiliares
+//construccion de las funciones auxiliares
 void leer();
 void almacenar(vector<string>&);
 void menu();
@@ -30,8 +30,9 @@ vector<string> datOrdenados;
 vector<string> datBuscados;
 
 int main(){
-	
+	List<string> list;
 	Sorts<string> sorts;
+	int min,max,pos;string min2,max2,pos2,alt;
 	//Leer el archivo y guardar en una lista
 	leer();
 	//Obtener los registros ordenados, usando el algoritmo de tipo "selection sort"
@@ -49,39 +50,57 @@ int main(){
 		menu();
 		cin>>inchar;
 		//Opc 4 sale del programa
-		if(inchar=='4')break;
+		if(inchar=='6')break;
 		switch(inchar){
 			// Opc 1 nos imprime los registros originales
 			case '1':
+				cout<<"\n\t(output)\n";
 				for(int i=0;i<datos_csv.size();i++){
 					cout<<datos.posic(i)<<"\n";
 				}
 			break;
 			//Opc 2 nos imprime los registros ordenados
 			case '2':
+				cout<<"\n\t(output)\n";
 				for(int i=0;i<datOrdenados.size();i++){
 					cout<<datOrde.posic(i)<<"\n";}
 			break;
-			//Opc 3 nos da la busqueda por rangos, con el algoritmo de busqueda secuencial
+			//Opc 3 nos da la busqueda por rangos, con el algoritmo de busqueda de lista
 			case '3':
-				int min,max;string min2,max2;
-				cout<<"Ingresa altura minima: ";
+				cout<<"Ingresa altura minima (input): ";
 				cin>>min2;
 				min=stoi(min2);
-				cout<<"Ingresa altura maxima: ";
+				cout<<"Ingresa altura maxima (input): ";
 				cin>>max2;
 				max=stoi(max2);
-				datBuscados=sorts.Busqueda(datOrdenados,min,max);
-				cout<<"\n"<<"\t"<<"Busqueda:"<<"\n"<<"\n";
+				datBuscados=list.find(datOrdenados,min,max);
+				cout<<"\n"<<"\t"<<"Busqueda (output):"<<"\n"<<"\n";
 				for(int i=0;i<datBuscados.size();i++){
 					cout<<datBuscados[i]<<"\n";}
 				cout<<"\n"<<"\t"<<"Fin de la busqueda."<<"\n";
 			break;
+			//Opc 4 actualiza la altura de la persona que está en x posicion del registro original
+			case '4':
+				cout<<"Ingresa posicion de la persona del registro original (input): ";
+				cin>>pos2;
+				pos=stoi(pos2);
+				cout<<"Ingresa altura a actualizar (input): ";
+				cin>>alt;
+				datos.update(pos,alt);
+			break;
+			//Opc 5 elimina del registro la altura que ya no se quiere tener almacenada
+			case '5':
+				cout<<"Ingresa posicion de la persona del registro original para borrar (input): ";
+				cin>>pos2;
+				pos=stoi(pos2);
+				datos.remove(pos);
+			break;
+			
 		}
 	}
 	return 0;
 }
-//Construccion de la funcion leer
+//Definicion de la funcion leer
 void leer(){
 	ifstream infile("personas.csv");
 	string line="";
@@ -95,7 +114,7 @@ void leer(){
 	}
 }
 
-//Construccion de la funcion almacenar
+//Definicion de la funcion almacenar
 void almacenar(vector<string>&datOrdenados){
 	vector<string> datos(datOrdenados);
 	ofstream myFile;
@@ -108,8 +127,8 @@ void almacenar(vector<string>&datOrdenados){
 	}
 }
 
-//Construccion de la funcion menu
+//Definicion de la funcion menu
 void menu(){
-	cout<<"\n"<<"1. Ver los registros originales"<<"\n"<<"2. Ver los registros ordenados"<<"\n"<<"3. Hacer busqueda por rango"<<"\n"<<"4. Salir"<<"\n";
-	cout<<"Opcion (input): ";
+	cout<<"\n"<<"1. Ver los registros originales"<<"\n"<<"2. Ver los registros ordenados"<<"\n"<<"3. Hacer busqueda por rango"<<"\n";
+	cout<<"4. Actualizar registro"<<"\n"<<"5. Borrar registro"<<"\n"<<"6. Salir"<<"\n"<<"Opcion (input): ";
 }
