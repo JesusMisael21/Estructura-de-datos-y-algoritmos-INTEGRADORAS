@@ -19,5 +19,8 @@ Despues de ejecutarse automáticamente el anterior proceso, el usuario tiene un 
 
 Para saber como acceder a estas 6 opciones y visualizar cuales son sus salidas, revisar el documento adjunto llamado "Descripcion algoritmos de la estructura (casos de prueba con ejemplos).pdf"
 
-Aquí lo que haremos es particularizar en el análisis de los algoritmos de la estructura lineal:
+Aquí lo que haremos es particularizar el análisis de los algoritmos/metodos de la estructura lineal usada:
 
+## add
+
+Este es una función o en este caso como se trabaja con orientado a objetos, es un método que como algoritmo se encarga de añadir elementos a una lista al final del último elemento. Para encontrar su complejidad temporal asintótica debamos identificar n, para este caso hay dos opciones para tomar n, primeramente la tomaremos como la cantidad de elementos ya insertados con la que cuenta la lista, por lo tanto, al ingresar otro elemento este tiene que recorrer elemento por elemento hasta llegar al elemento nulo, es decir, al principio de la lista por lo que tenemos una complejidad temporal asintótica O(n). Ahora, si n es la cantidad de elementos que debemos insertar en una lista, como cada elemento insertado tiene que pasar por cada uno de los que ya se insertaron, este tiende a ser mayor a una complejidad lineal para el peor de los casos, y siguiendo la jerarquía nos demanda a una complejidad asintótica de O(n^2).
