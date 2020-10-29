@@ -18,6 +18,15 @@ Para saber como acceder a estas 6 opciones y visualizar cuales son sus salidas, 
 
 A continuación, lo que haremos es particularizar el análisis de los algoritmos/metodos para manipular la estructura de árbol (bst) la cual accedo y manipulo a ella desde las opciones anteriormente mencionadas.
 
+# add
+
+La inserción se puede dar una solución tanto iterativa como recursiva, en esta aplicación se hace recursiva. Si tenemos inicialmente como parámetro un árbol vacío se crea un nuevo nodo como único contenido el elemento a insertar. Si no lo está, se comprueba si el elemento dado es menor que la raíz del árbol inicial con lo que se inserta en el subárbol izquierdo y si es mayor se inserta en el subárbol derecho. Para el peor de los casos es que el árbol se a degenerado, así teniendo una complejidad temporal asintótica de O(n).
+
+# update
+
+Este es el algoritmo para actualizar, lo que se hace es una adaptación de un algoritmo de busqueda, que consiste en acceder a la raíz del árbol, si el elemento a localizar coincide con este la búsqueda ha concluido con éxito, si el elemento es menor se busca en el subárbol izquierdo y si es mayor en el derecho, hasta que se encuentra el dato a modificar es que se hace la actualización. Si se alcanza un nodo hoja y el elemento no ha sido encontrado es que no existe en el árbol. 
+Cabe destacar que la búsqueda en este tipo de árboles es muy eficiente, representa una función logarítmica. El máximo número de comparaciones que necesitaríamos para saber si un elemento se encuentra en un árbol binario de búsqueda estaría entre [log2(n+1)] y n, siendo N el número de nodos. Claro, este tiempo anterior para casos promedio, pero como en el algoritmo anterior de inserción, este puede caer en un árbol degenerado en el que tenga que pasar recursivamente nodo por nodo linealmente, entonces, decimos que en una complejidad temporal asintótica su ejecución es de O(n).
+
 # visit
 
 Este método lo manda a llamar el usuario y de manera conjunta llama a las siguientes (diferentes maneras de mostrar el contenido de un árbol):
