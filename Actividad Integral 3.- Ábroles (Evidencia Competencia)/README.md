@@ -27,6 +27,15 @@ La inserción se puede dar una solución tanto iterativa como recursiva, en esta
 Este es el algoritmo para actualizar, lo que se hace es una adaptación de un algoritmo de busqueda, que consiste en acceder a la raíz del árbol, si el elemento a localizar coincide con este la búsqueda ha concluido con éxito, si el elemento es menor se busca en el subárbol izquierdo y si es mayor en el derecho, hasta que se encuentra el dato a modificar es que se hace la actualización. Si se alcanza un nodo hoja y el elemento no ha sido encontrado es que no existe en el árbol. 
 Cabe destacar que la búsqueda en este tipo de árboles es muy eficiente, representa una función logarítmica. El máximo número de comparaciones que necesitaríamos para saber si un elemento se encuentra en un árbol binario de búsqueda estaría entre [log2(n+1)] y n, siendo N el número de nodos. Claro, este tiempo anterior para casos promedio, pero como en el algoritmo anterior de inserción, este puede caer en un árbol degenerado en el que tenga que pasar recursivamente nodo por nodo linealmente, entonces, decimos que en una complejidad temporal asintótica su ejecución es de O(n).
 
+# remove
+
+Existen varios casos a tener en consideración:
+* Borrar un nodo sin hijos o nodo hoja: simplemente se borra y se establece a nulo el apuntador de su padre.
+* Borrar un nodo con un subárbol hijo: se borra el nodo y se asigna su subárbol hijo como subárbol de su padre.
+* Borrar un nodo con dos subárboles hijo: la solución está en reemplazar el valor del nodo por el de su predecesor o por el de su sucesor en inorden y posteriormente borrar este nodo. Su predecesor en inorden será el nodo más a la derecha de su subárbol izquierdo (mayor nodo del subarbol izquierdo), y su sucesor el nodo más a la izquierda de su subárbol derecho (menor nodo del subarbol derecho).
+
+Este algoritmo en general puede caer en un árbol degenerado en el que tenga que pasar recursivamente nodo por nodo linealmente, entonces, decimos que en una complejidad temporal asintótica su ejecución es de O(n).
+
 # visit
 
 Este método lo manda a llamar el usuario y de manera conjunta llama a las siguientes (diferentes maneras de mostrar el contenido de un árbol):
