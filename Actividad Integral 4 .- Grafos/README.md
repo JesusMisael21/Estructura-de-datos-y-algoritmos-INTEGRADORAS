@@ -16,7 +16,7 @@ Despues de ejecutarse automáticamente el anterior proceso, el usuario tiene un 
 4. Mostrar el camino mas corto entre dos lugares
 5. Salir
 
-Para saber como acceder a estas 6 opciones y visualizar cuales son sus salidas, revisar el documento adjunto llamado "Descripcion algoritmos de la estructura (casos de prueba con ejemplos).pdf"
+Para saber como acceder a estas 5 opciones y visualizar cuales son sus salidas, revisar el documento adjunto llamado "Descripcion algoritmos de la estructura (casos de prueba con ejemplos).pdf"
 
 A continuación, lo que haremos es particularizar el análisis de los algoritmos/metodos que acceden a la estructura del grafo y así me den la funcionalidad de las opciones anteriormente mencionadas.
 
