@@ -101,6 +101,8 @@ int main(int argc, char* argv[]) {
 					if(v_aux=="E")a=1;
 					if(a==1) p_bfs=p_bfs+v_aux;
 				}
+				// se compara cual path tiene menos lugares intermediarios
+				// el que tiene menos lugares por visitar por en medio será el mas corto
 				if(p_dfs>p_bfs){cout<<p_bfs;}
 				else{cout<<p_dfs;}
 			break;
