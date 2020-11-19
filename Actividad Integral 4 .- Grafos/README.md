@@ -4,7 +4,7 @@ En esta entrega se hizo con respecto a la simulación de un mapa. El concepto de
 
 El archivo “mapa.txt” tiene coordenadas, en donde el primer elemento de cada coordenada indica el lugar para ser enlazado y el segundo elemento de la misma indica el lugar al que se enlazará. El contenido de dicho archivo se almacena en una Lista de Adjacencias por parte del grafo.
 
-**Nota:** Primeramente, para su funcionamiento se tienen que descargar los 3 archivos (main.cpp, graph.h y mapa.stl) en la misma carpeta o lugar de dirección. Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación a cualquier otro programa". Ejemplo si se está compilando desde un OS windows (compilación desde la terminal): g++ main.cpp -o main.exe
+**Nota:** Primeramente, para su funcionamiento se tienen que descargar los 3 archivos (main.cpp, graph.h y mapa.txt) en la misma carpeta o lugar de dirección. Para obtener el ejecutable solamente se tiene que compilar el "main.cpp", no hace falta incluir en la compilación a cualquier otro programa". Ejemplo si se está compilando desde un OS windows (compilación desde la terminal): g++ main.cpp -o main.exe
 
 Antes de interactuar con las 5 opciones, el programa por si solo añade el archivo “mapa.txt” a un grafo, internamente hace las conexiones (crea las aristas). 
 
