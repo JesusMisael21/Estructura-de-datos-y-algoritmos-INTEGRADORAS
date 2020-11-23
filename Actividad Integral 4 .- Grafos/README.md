@@ -16,6 +16,8 @@ Despues de ejecutarse automáticamente el anterior proceso, el usuario tiene un 
 4. Mostrar el camino mas corto entre dos lugares
 5. Salir
 
+Al finalizar el programa, se arrojará un archivo de texto llamado "consultas.txt" de todas las consultas que se hicieron.
+
 Para saber como acceder a estas 5 opciones y visualizar cuales son sus salidas, revisar el documento adjunto llamado "Descripcion algoritmos de la estructura (casos de prueba con ejemplos).pdf"
 
 A continuación, lo que haremos es particularizar el análisis de los algoritmos/metodos que acceden a la estructura del grafo y así me den la funcionalidad de las opciones anteriormente mencionadas.
