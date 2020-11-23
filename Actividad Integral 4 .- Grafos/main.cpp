@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <fstream>
 #include "graph.h"
 
 using namespace std;
@@ -17,6 +18,8 @@ using namespace std;
 void menu();
 
 int main(int argc, char* argv[]) {
+	ofstream archivo;
+	archivo.open("consultas.txt",ios::out);
 	// declaracion de variables locales
 	string ini, dest,visit,v_aux,p_dfs,p_bfs;
 	vector<string> vi;
@@ -36,57 +39,79 @@ int main(int argc, char* argv[]) {
 		switch(inchar){
 			// Opc 1 muestra las conexiones entre lugares
 			case '1':
+				archivo<<"\n\n\t\tOpcion para mostrar las conexiones entre lugares.\n";
 				cout<<"\t"<<"output:"<<"\n"<<mapa.printAdjList();
+				archivo<<"\toutput:\n"<<mapa.printAdjList();
 			break;
 			// Opc 2 mustrar los adyacentes visitados entre dos lugares con DFS
 			case '2':
+				archivo<<"\n\n\t\tOpcion para mostrar los adyacentes visitados entre dos lugares con DFS.";
 				// se piden los dos lugares
 				vi.clear();
 				cout<<"Lugar inicial (input): ";
+				archivo<<"\nLugar inicial (input): ";
 				cin>>ini;
+				archivo<<ini;
 				cout<<"Lugar destino (input): ";
+				archivo<<"\nLugar destino (input): ";
 				cin>>dest;
+				archivo<<dest+"\n";
 				// se busca con DFS
 				visit=mapa.DFS(stoi(ini),stoi(dest));
 				cout<<"\t"<<"output:"<<"\n";
+				archivo<<"\toutput:\n";
 				for(int i=0;i<visit.size();i++){
 					v_aux=visit[i];
 					vi.push_back(v_aux);
 					if(vi[i]!="E"){
-						cout<<vi[i];}
+						cout<<vi[i];
+						archivo<<vi[i];}
 					else{break;}
 				}
 			break;
 			// Opc 3 mustrar los adyacentes visitados entre dos lugares con BFS
 			case '3':
+				archivo<<"\n\n\t\tOpcion para mostrar los adyacentes visitados entre dos lugares con BFS.";
 				// se piden los dos lugares
 				vi.clear();
 				cout<<"Lugar inicial (input): ";
+				archivo<<"\nLugar inicial (input): ";
 				cin>>ini;
+				archivo<<ini;
 				cout<<"Lugar destino (input): ";
+				archivo<<"\nLugar destino (input): ";
 				cin>>dest;
+				archivo<<dest+"\n";
 				// se busca con BFS
 				visit=mapa.BFS(stoi(ini),stoi(dest));
 				cout<<"\t"<<"output:"<<"\n";
+				archivo<<"\toutput:\n";
 				for(int i=0;i<visit.size();i++){
 					v_aux=visit[i];
 					vi.push_back(v_aux);
 					if(vi[i]!="E"){
-						cout<<vi[i];}
+						cout<<vi[i];
+						archivo<<vi[i];}
 					else{break;}
 				}
 			break;
 			// Opc 4 encuentra el camino más corto entre dos lugares
 			case '4':
+				archivo<<"\n\n\t\tOpcion para encuentra el camino más corto entre dos lugares.";
 				// se piden los dos lugares
 				cout<<"Lugar inicial (input): ";
+				archivo<<"\nLugar inicial (input): ";
 				cin>>ini;
+				archivo<<ini;
 				cout<<"Lugar destino (input): ";
+				archivo<<"\nLugar destino (input): ";
 				cin>>dest;
+				archivo<<dest+"\n";
 				visit=mapa.DFS(stoi(ini),stoi(dest));
 				int a=0;
 				p_dfs="";
 				cout<<"\t"<<"output:"<<"\n";
+				archivo<<"\toutput:\n";
 				// proceso para encontrar el camino más cerca entre los path's de DFS y BFS
 				for(int i=0;i<visit.size();i++){
 					v_aux=visit[i];
@@ -103,12 +128,17 @@ int main(int argc, char* argv[]) {
 				}
 				// se compara cual path tiene menos lugares intermediarios
 				// el que tiene menos lugares por visitar por en medio será el mas corto
-				if(p_dfs>p_bfs){cout<<p_bfs;}
-				else{cout<<p_dfs;}
+				if(p_dfs>p_bfs){
+					cout<<p_bfs;
+					archivo<<p_bfs;}
+				else{
+					cout<<p_dfs;
+					archivo<<p_dfs;}
 			break;
 		}
 		
 	}
+	archivo.close();
 }
  
 //Definicion de la funcion menu
