@@ -16,7 +16,7 @@ Despues de ejecutarse automáticamente el anterior proceso, el usuario tiene un 
 4. Mostrar el camino mas corto entre dos lugares
 5. Salir
 
-Al finalizar el programa, se arrojará un archivo de texto llamado "consultas.txt" de todas las consultas que se hicieron.
+Al finalizar el programa, se arrojará un archivo de texto llamado "consultas.txt" de todas las consultas que se hicieron para tener un historial.
 
 Para saber como acceder a estas 5 opciones y visualizar cuales son sus salidas, revisar el documento adjunto llamado "Descripcion algoritmos de la estructura (casos de prueba con ejemplos).pdf"
 
