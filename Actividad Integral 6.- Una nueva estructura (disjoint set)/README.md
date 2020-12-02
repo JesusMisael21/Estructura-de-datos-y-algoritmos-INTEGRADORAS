@@ -25,7 +25,8 @@ A continuación, lo que haremos es particularizar el análisis de los algoritmos
 # Métodos/algoritmos análisis de complejidad
 
 Si bien hay varias formas de implementar estructuras de datos de conjuntos disjuntos, en la práctica a menudo se identifican con una implementación particular llamada bosque de conjuntos disjuntos. Este es un tipo de bosque especializado que realiza uniones y se encuentra en un tiempo amortizado casi constante. Para realizar una secuencia de m operaciones de unión o búsqueda en un bosque de conjuntos disjuntos con n nodos se requiere un tiempo total O(m α(n)) , donde α(n) es la función de Ackermann inversa de crecimiento extremadamente lento. 
-En lo siguiente se describe las opciones que se implementaron.
+
+En lo siguiente se describen los algoritmos que se usaron en lo particular para mi implementación:
 
 ## Union
 
