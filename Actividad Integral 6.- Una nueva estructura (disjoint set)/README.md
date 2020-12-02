@@ -43,3 +43,8 @@ En particular, la inicialización de esta estructura de conjuntos con n nodos re
 ## conj
 
 Este es un algoritmo particular de la implementación, este algoritmo se desarrolló para la opción 4 de usuario. Esta toma todos los conjuntos distintos que pueda haber y toma la raíz para desplegar los representantes o líderes de cada conjunto. Este para el peor de los casos tiende a ser un tiempo asintótico O(n^2) ya que analiza cada elemento n, en n veces para asegurar que no se repite un lider en un vector que guarda las personas.
+
+# Fuentes consultadas
+
+Hudson, T. (1983). Correspondences and numerical differences between disjoint sets. Child development, 84-90.
+Jensen, R. B., & Solovay, R. M. (1970). Some applications of almost disjoint sets. In Studies in Logic and the Foundations of Mathematics (Vol. 59, pp. 84-104). Elsevier.
